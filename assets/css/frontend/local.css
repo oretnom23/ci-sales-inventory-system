@@ -1,0 +1,22 @@
+html,body{font-family: "Open Sans",sans-serif;font-size:12px;}
+label.error{font-size:12;color:#f00;}
+.ecommerce .main{min-height:500px;}
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.product-list > div{
+	min-height: 460px;
+}
+.slider-selection{background-image: linear-gradient(to bottom, #ddd 0px, #ddd 100%);}
+.header{background-color:#000080;}
+.ecommerce .header-navigation > ul > li > a{color:#fff;}
+.ecommerce .header-navigation > ul > li > a:hover{color:#000080;}
+.product-quantity input.form-control{width:100%;}
+.img-responsive{width:100%}

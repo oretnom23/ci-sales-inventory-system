@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Receipt</title>
+		<style>
+			h2{text-align:center;}
+			@media print {
+			  .no-print, .no-print * {
+			    display: none !important;
+			  }
+			}
+		</style>
+	</head>
+	<body>
+		<h2>CHMSC Techno Bazaar</h2>
+		<table style="width:100%">
+			<tr>
+				<td colspan="4"><b>Customer</b> : <?php echo $data["customer_name"] ?></td>
+			</tr>
+			<tr>
+				<td colspan="2"><b>Order ID</b> : <?php echo str_pad($data["id"],7, "0", STR_PAD_LEFT) ?> </td>
+				<td colspan="2"><b>Date</b> : <?php echo $data["created_at"] ?></td>
+			</tr>
+			<tr>
+				<td colspan="4"><b>Items</b></td>
+			</tr>
+			<tr>
+				<td><b>Product</b></td>
+				<td><b>Price</b></td>
+				<td><b>Qty</b></td>
+				<td><b>Total</b></td>
+			</tr>
+			<?php foreach($item as $_item): ?>
+				<tr>
+					<td><?php echo $_item["product_name"] ?></td>
+					<td><?php echo number_format($_item["price"],2) ?></td>
+					<td><?php echo number_format($_item["qty"],2) ?></td>
+					<td><?php echo number_format($_item["qty"] * $_item["price"],2) ?></td>
+				</tr>
+			<?php endforeach; ?>
+			<tr>
+				<td colspan="3"><b>Total</b></td>
+				<td><?php echo number_format($data["total"],2) ?></td>
+			</tr>
+			<?php if($data["payment_method"] == "cash"): ?>
+				<tr>
+					<td colspan="3"><b>Cash</b></td>
+					<td><?php echo number_format($data["amount_paid"],2) ?></td>
+				</tr>
+				<tr>
+					<td colspan="3"><b>Change</b></td>
+					<td><?php echo number_format(($data["amount_paid"] - $data["total"]),2) ?></td>
+				</tr>
+			<?php endif; ?>
+		</table>
+
+		<div class="no-print" style="margin-top:20px">
+			<button type="button" class="no-print" onclick="window.print()">Print</button>
+		</div>
+	</body>
+</html>

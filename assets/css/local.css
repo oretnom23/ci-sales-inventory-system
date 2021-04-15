@@ -1,0 +1,11 @@
+html,body{font-size:12px;font-family: calibri}
+label.error{font-size:12px;color:#F00;}
+
+.clear{clear:both;}
+
+.page-container .page-content{min-height: 500px;}
+.product-table-container div.dataTables_filter label{float:none;width:100%;}
+.product-table-container div.dataTables_filter input{width:100%;}
+.product-table-container .dataTables_filter .form-control{margin-left:0;}
+.page-logo a img.logo-default{height:100%}
+.page-header .page-header-top .page-logo .logo-default{margin-top: 0px}
